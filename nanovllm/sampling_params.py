@@ -1,0 +1,17 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class SamplingParams:
+    """Parameters for sampling during text generation."""
+
+    temperature: float = 1.0
+    max_tokens: int = 64
+    ignore_eos: bool = False
+    # do_sample: bool = True
+    # top_k: int = 0
+    # top_p: float = 1.0
+    # repetition_penalty: float = 1.0\
+    
+    def __post_init__(self):
+        assert self.temperature > 1e-10, "greedy sampling is not permitted"
