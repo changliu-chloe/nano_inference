@@ -22,6 +22,7 @@ class Sequence:
         self.num_tokens = len(self.token_ids)   # input + output 
         self.num_prompt_tokens = len(token_ids) # just input
 
+        # 由BlockManager管理，动态变化
         self.num_cached_tokens = 0
         self.block_table = []
 
